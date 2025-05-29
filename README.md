@@ -1,4 +1,10 @@
 ### Previews
+<p float = "left">
+  <img src="https://github.com/Apacher122/FetchRecipeApp/blob/main/previews/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-05-29%20at%2017.36.51.png" width="200"/>
+  <img src="https://github.com/Apacher122/FetchRecipeApp/blob/main/previews/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-05-29%20at%2017.36.58.png" width="200"/>
+  <img src="https://github.com/Apacher122/FetchRecipeApp/blob/main/previews/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20-%202025-05-29%20at%2017.37.06.png" width="200"/>
+  <img src="https://github.com/Apacher122/FetchRecipeApp/blob/main/previews/Simulator%20Screen%20Recording%20-%20iPhone%2016%20Pro%20-%202025-05-29%20at%2018.04.33.gif" width="200"/>
+</p>
 
 ### Focus Areas: 
 One of my priorities was to implement a robust **MVVM** architecture for several reasons:
