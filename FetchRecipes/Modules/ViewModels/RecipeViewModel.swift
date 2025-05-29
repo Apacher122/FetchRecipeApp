@@ -37,6 +37,7 @@ class RecipeViewModel: ObservableObject {
     @Published var filteredRecipes: [TestEntity] = []
     @Published var cuisines: [String] = []
     @Published var selectedCuisine: String?
+    private(set) var recipesLoadState = false
     
     private let persistanceController = PersistenceController.shared
     
@@ -49,6 +50,8 @@ class RecipeViewModel: ObservableObject {
     
     func loadRecipes(from endPoint: String) async {
         print("attempting to fetch recipes")
+        guard !recipesLoadState else { return }
+        recipesLoadState = true
         DispatchQueue.main.async { self.isLoading = true }
         do {
             let result: [Recipe] = try await recipeListService.getRecipeList(endPoint: endPoint)

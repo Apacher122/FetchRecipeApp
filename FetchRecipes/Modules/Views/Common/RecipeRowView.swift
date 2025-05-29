@@ -32,7 +32,9 @@ struct RecipeRowView: View {
                 .bold()
         }
         .task {
-            await loadImage(url: recipe.photoURLSmall!)
+            if (recipe.photoURLSmall != nil) {
+                await loadImage(url: recipe.photoURLSmall!)
+            }
         }
     }
     
