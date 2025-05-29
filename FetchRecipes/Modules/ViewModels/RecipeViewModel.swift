@@ -20,6 +20,7 @@
 ///     - loadRecipes(from:): Asyncrhonously fetches recipes from the provided API endpoints, saves to Core Data, and updates local list
 ///     - selectCuisine(_:): Sets the selected Cuisine and applies the filter to the current list of recipes
 ///     - fetchRecipesFromData(): Fetches recipes from Core Data, extracts cuisines, and applies current filter
+///     - reset(): resets data and states
 ///     - extractCuisines(): Exracts unique cuisines from the current recipe list and updates the list of cuisines
 ///     - applyFilter(): Filters the recipes based on the selected cuisine
 ///     - saveData(_:): Saves or updates recipes in Core Data, and deletes any missing or invalid entries from the latest API response
