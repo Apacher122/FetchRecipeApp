@@ -56,8 +56,7 @@ struct RecipeListView: View {
         List(viewModel.filteredRecipes, id: \.self) { recipe in
             VStack(alignment: .leading, spacing: 4) {
                 NavigationLink(destination: RecipeDetailView(recipe: recipe)) {
-                    Text(recipe.name ?? "Unknown")
-                        .font(.headline)
+                    RecipeRowView(recipe: recipe)
                 }
             }
             .padding(.vertical, 4)

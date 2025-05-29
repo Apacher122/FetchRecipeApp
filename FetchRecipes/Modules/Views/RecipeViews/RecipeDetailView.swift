@@ -32,7 +32,8 @@ struct RecipeDetailView: View {
                 onRefresh: nil
             )
             Text(recipe.name ?? "")
-                .font(.title)
+                .font(.system(size: 30, weight: .bold, design: .default))
+                .padding(.vertical, 20)
             if let image = image {
                 Image(uiImage: image)
                     .resizable()
@@ -44,6 +45,7 @@ struct RecipeDetailView: View {
             }
             Text("Cuisine Type: \(recipe.cuisine ?? "")")
                 .font(.title2)
+                .padding()
             if hasInfo(recipe.sourceURL) {
                 Link("View Recipe", destination: URL(string: recipe.sourceURL!)!)
             }
