@@ -54,7 +54,9 @@ struct RecipeDetailView: View {
             }
         }
         .task {
-            await loadImage(url: recipe.photoURLLarge!)
+            if (recipe.photoURLLarge != nil) {
+                await loadImage(url: recipe.photoURLLarge!)
+            }
         }
         .navigationBarHidden(true)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
