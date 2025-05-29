@@ -42,6 +42,9 @@ struct RecipeListView: View {
                 buildList()
             }
         }
+        .onDisappear {
+            viewModel.reset()
+        }
         .navigationBarHidden(true)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .task {

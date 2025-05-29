@@ -84,6 +84,11 @@ class RecipeViewModel: ObservableObject {
         }
     }
     
+    func reset() {
+        recipesLoadState = false
+        recipes = []
+    }
+    
     private func extractCuisines() {
         let raw = recipes.compactMap { $0.cuisine }
         let uniqueCuisines = Array(Set(raw)).sorted()
