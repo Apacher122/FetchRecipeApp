@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23788" systemVersion="24F74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="TestEntity" representedClassName=".TestEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="cuisine" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="photoURLLarge" optional="YES" attributeType="String"/>
+        <attribute name="photoURLSmall" optional="YES" attributeType="String"/>
+        <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="sourceURL" optional="YES" attributeType="String"/>
+        <attribute name="uuid" attributeType="String"/>
+        <attribute name="youtubeURL" optional="YES" attributeType="String"/>
+    </entity>
+</model>

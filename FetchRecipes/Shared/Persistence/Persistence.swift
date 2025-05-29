@@ -9,15 +9,24 @@ import CoreData
 
 struct PersistenceController {
     static let shared = PersistenceController()
+    
+    static let inMemory: PersistenceController = {
+        let controller = PersistenceController(inMemory: true)
+        return controller
+    }()
 
     @MainActor
     static let preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
+        let controller = PersistenceController(inMemory: true)
+        let viewContext = controller.container.viewContext
+        let sampleData = TestEntity(context: viewContext)
+        sampleData.name = "Crunchwrap Supreme"
+        sampleData.cuisine = "Taco Bell"
+        sampleData.photoURLLarge = "example.com"
+        sampleData.photoURLSmall = "examplebutsmaller.com"
+        sampleData.uuid = "abc123"
+        sampleData.sourceURL = "source.com"
+        sampleData.youtubeURL = "youtube.com"
         do {
             try viewContext.save()
         } catch {
@@ -26,7 +35,7 @@ struct PersistenceController {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
-        return result
+        return controller
     }()
 
     let container: NSPersistentContainer
@@ -53,5 +62,37 @@ struct PersistenceController {
             }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
+    }
+}
+
+struct PreviewPersistenceController {
+    static let shared = PreviewPersistenceController()
+    let container: NSPersistentContainer
+    let previewEntity: TestEntity
+    
+    init() {
+        container = NSPersistentContainer(name: "FetchRecipes")
+        let description = NSPersistentStoreDescription()
+        description.type = NSInMemoryStoreType
+        container.persistentStoreDescriptions = [description]
+        
+        container.loadPersistentStores { _, error in
+            if let error = error {
+                fatalError("Error loading preview Store: \(error)")
+            }
+        }
+        
+        let viewContext = container.viewContext
+        let recipe = TestEntity(context: viewContext)
+        recipe.cuisine = "The Finest Cuisine"
+        recipe.name = "Crunchwrap Supreme"
+        recipe.photoURLLarge = "photo.com"
+        recipe.photoURLSmall = "photobutsmaller.com"
+        recipe.uuid = "123abc"
+        recipe.sourceURL = "source.com"
+        recipe.youtubeURL = "https://www.youtube.com/watch?v=6R8ffRRJcrg"
+        
+        try? viewContext.save()
+        self.previewEntity = recipe
     }
 }
