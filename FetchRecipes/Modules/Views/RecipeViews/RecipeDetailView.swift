@@ -5,6 +5,15 @@
 //  Created by Rey Aparece on 5/28/25.
 //
 
+/// - Displays a title bar with a back button.
+/// - Shows recipe name and cuisine type
+/// - Loads and displays image from cache or URL
+/// - Displays a link to the recipe source if available
+/// - Attempts to show a YouTube video, otherwise displays the link
+///
+/// - Parameters:
+///     - recipe: The `TestEntity` instance containing the recipe details
+
 import SwiftUI
 import WebKit
 

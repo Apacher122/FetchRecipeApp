@@ -2,8 +2,17 @@
 //  HomeView.swift
 //  FetchRecipes
 //
-//  Created by pgAgent on 5/28/25.
+//  Created by Rey Aparece on 5/28/25.
 //
+
+/// `RecipeListView` manages loading, filtering, and displaying a recipe using `RecipeViewModel`
+/// - Provides UI feedback for loading and error states.
+/// - Allows navigation to recipe details
+///
+/// - Parameters:
+///     - viewModel: The observed view model responsible for fetching and filtering recipes
+///     - endPoint: Fetch's provided API endpoint to fetch list
+///
 
 import SwiftUI
 import CoreData

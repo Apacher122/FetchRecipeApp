@@ -7,6 +7,9 @@
 
 import CoreData
 
+/// Controller responsible for managing the Core Data stack for the app
+///
+/// Provides shared, in-memory, and preview instances for usage.
 struct PersistenceController {
     static let shared = PersistenceController()
     
@@ -65,6 +68,7 @@ struct PersistenceController {
     }
 }
 
+/// This controller is used for previews
 struct PreviewPersistenceController {
     static let shared = PreviewPersistenceController()
     let container: NSPersistentContainer

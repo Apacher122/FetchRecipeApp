@@ -2,8 +2,13 @@
 //  ImageCacher.swift
 //  FetchRecipes
 //
-//  Created by pgAgent on 5/28/25.
+//  Created by Rey Aparece on 5/28/25.
 //
+
+/// Thread-safe singleton class responsible for caching images in memory using `NSCache`
+///
+/// `ImageCacher` will provide a shared instance for storing and retrieving images by a string key,
+/// helping to improve performance by mitigating redundant image loading
 
 import Foundation
 import UIKit

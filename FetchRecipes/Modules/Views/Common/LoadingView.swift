@@ -2,8 +2,12 @@
 //  LoadingView.swift
 //  FetchRecipes
 //
-//  Created by pgAgent on 5/29/25.
+//  Created by Rey Aparece on 5/29/25.
 //
+
+/// SwiftUI view that displays a loading spinner with a message.
+///
+/// `LoadingView` will present a `ProgressView` alongside a "Loading recipes..." message
 
 import SwiftUI
 

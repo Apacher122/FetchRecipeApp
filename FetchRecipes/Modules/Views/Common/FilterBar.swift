@@ -2,8 +2,17 @@
 //  FilterBar.swift
 //  FetchRecipes
 //
-//  Created by pgAgent on 5/29/25.
+//  Created by Rey Aparece on 5/29/25.
 //
+
+/// Horizontal scrollable filter bar for selecting cuisines
+///
+/// Displays a unique list of cuisines, including "All" to show all
+/// Highlights currently selected cuisine and updates `RecipeViewModel` to update the selected cuisine
+///
+/// - Parameters:
+///     - viewModel: An observed object of type `RecipeViewModel` that manages a list of cuisines and the selected cuisine
+///
 
 import SwiftUI
 

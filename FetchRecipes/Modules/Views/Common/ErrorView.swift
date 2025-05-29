@@ -2,8 +2,13 @@
 //  ErrorView.swift
 //  FetchRecipes
 //
-//  Created by pgAgent on 5/29/25.
+//  Created by Rey Aparece on 5/29/25.
 //
+
+/// SwiftUI view that displays error messagse
+///
+/// Use `ErrorView` to present error messages on screen
+/// - Parameter error: The error message to display on screen
 
 import SwiftUI
 

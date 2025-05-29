@@ -5,6 +5,26 @@
 //  Created by Rey Aparece on 5/28/25.
 //
 
+/// ViewModel responsible for managing recipe data and preparing it for UI updates
+///
+/// - Properties:
+///     - context: Core Data managed object context used for data operations
+///     - errorMessage: Optional string to display error messages
+///     - isLoading: Boolean to see if there is a loading operation in progress
+///     - recipes: Complete list of recipes fetched from Core Data
+///     - filteredRecipes: List of recipes filtered by user-selected cuisine
+///     - selectedCuisine: Currently selected cuisine, used for filtering
+///
+/// - Methods
+///     - init(context:): Initializes the view model with a provided or default Core Data context
+///     - loadRecipes(from:): Asyncrhonously fetches recipes from the provided API endpoints, saves to Core Data, and updates local list
+///     - selectCuisine(_:): Sets the selected Cuisine and applies the filter to the current list of recipes
+///     - fetchRecipesFromData(): Fetches recipes from Core Data, extracts cuisines, and applies current filter
+///     - extractCuisines(): Exracts unique cuisines from the current recipe list and updates the list of cuisines
+///     - applyFilter(): Filters the recipes based on the selected cuisine
+///     - saveData(_:): Saves or updates recipes in Core Data, and deletes any missing or invalid entries from the latest API response
+///
+
 import Foundation
 import CoreData
 
@@ -76,10 +96,7 @@ class RecipeViewModel: ObservableObject {
             filteredRecipes = recipes
         }
     }
-    
-    // Save to Core Data
-    // Update load in recipes, or add new.
-    // Delete item if it is missing from the API call
+
     private func saveData(_ recipes: [Recipe]) async throws {
         let fetchRequest: NSFetchRequest<TestEntity> = TestEntity.fetchRequest()
         

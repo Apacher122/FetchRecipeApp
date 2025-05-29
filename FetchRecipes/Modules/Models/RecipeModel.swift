@@ -4,9 +4,11 @@
 //
 //  Created by Rey Aparece on 5/28/25.
 //
-
 import Foundation
 
+
+/// Represents response that contains a list of recipes
+/// Conforms to `Decodable` for simple decoding from JSON
 struct RecipesRespone: Decodable {
     let recipes: [Recipe]
 }

@@ -2,8 +2,14 @@
 //  YouTubeView.swift
 //  FetchRecipes
 //
-//  Created by pgAgent on 5/29/25.
+//  Created by Rey Aparece on 5/29/25.
 //
+
+/// SwiftUI view that displays a YouTube video using `WKWebView` or a link to the video if loading fails
+///
+/// - Parameters:
+///     - urlString: The YouTube url string
+///     - failedToLoad: Boolean that indicates if loading was successful
 
 import SwiftUI
 import WebKit

@@ -5,6 +5,13 @@
 //  Created by Rey Aparece on 5/28/25.
 //
 
+/// Main content view for the app
+///
+/// Displays a navigation menu with three options to display different scenarios:
+/// - Scenario 1: Successful Recipe JSON Data
+/// - Scenario 2: Malformed Recipe JSON Data
+/// - Scenario 3: Empty Recipe JSON Data
+
 import SwiftUI
 import CoreData
 
