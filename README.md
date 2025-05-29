@@ -1,4 +1,4 @@
-### Summary: Include screen shots or a video of your app highlighting its features
+### Previews
 
 ### Focus Areas: 
 One of my priorities was to implement a robust **MVVM** architecture for several reasons:
